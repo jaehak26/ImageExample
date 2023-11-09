@@ -24,8 +24,9 @@ const ImageHandler = () => {
 	};
 
 	const handleImageLoad = async () => {
-		const response = await axios.get(`${serverUrl}/api/images/${imageName}`);
-		setImageSrc(response.data.src);
+		// const response = await axios.get(`${serverUrl}/api/images/${imageName}`);
+		// setImageSrc(response.data.src);
+		setImageSrc(`${serverUrl}/uploads/${imageName}`);
 	};
 
 	return (
