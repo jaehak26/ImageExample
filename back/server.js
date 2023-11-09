@@ -8,8 +8,11 @@ const app = express();
 app.use(cors({ origin: ['http://localhost:3000', 'http://localhost:5000'] }));
 //이걸 쓰면 uploads폴더를 http://localhost:port/uploads로 접근이 가능함
 //Not allowed to load local resource: file:///D:/react/ImageExample/back/uploads/*.jpg 에러 해결용
+
+//https://velog.io/@dngur9801/netERRBLOCKEDBYRESPONSE.NotSameOrigin-%EC%97%90%EB%9F%AC
+app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
 app.use('/uploads', express.static('uploads'));
-app.use(helmet());
+// app.use(helmet());
 
 const port = process.env.PORT || 5000;
 
