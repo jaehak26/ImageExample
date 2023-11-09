@@ -47,9 +47,9 @@ app.post('/api/upload', upload.single('image'), (req, res) => {
 	res.json({ message: 'Image uploaded', filename: req.file.filename });
 });
 
-app.get('/api/images/:name', (req, res) => {
-	res.json({ src: `http://localhost:${port}/uploads/${req.params.name}` });
-});
+// app.get('/api/images/:name', (req, res) => {
+// 	res.json({ src: `http://localhost:${port}/uploads/${req.params.name}` });
+// });
 
 app.listen(port, () => {
 	console.log(`server is listening at localhost:${port}`);
